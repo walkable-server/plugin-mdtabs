@@ -15,24 +15,25 @@ Adds the plugin to your `book.json`, then run `gitbook install` if you are build
 
 ### Usage
 
-```txt
-
+<pre lang="markdown">
+<code>
 This is a code block with tabs for each languages:
 
 {% mdtabs title="Python" %}
 ## can have headers here
-\```python
+```python
 msg = "Hello World"
 print msg
-\```
+```
 {%- mdtab title="JavaScript" %}
-\```js
+```js
 var msg = "Hello World";
 console.log(msg);
-\```
-{%- mdtab title="HTML" %}
-\```html
-<b>Hello World</b>
-\```
-{% endmdtabs %}
 ```
+{%- mdtab title="HTML" %}
+```html
+<b>Hello World</b>
+```
+{% endmdtabs %}
+</code>
+</pre>
