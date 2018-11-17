@@ -1,8 +1,8 @@
-.codetabs {
+.mdtabs {
 
 }
 
-.codetabs .codetabs-header .tab {
+.mdtabs .mdtabs-header .tab {
     display: inline-block;
     padding: 3px 6px;
     border-bottom: 2px solid transparent;
@@ -10,17 +10,16 @@
     opacity: 0.7;
 }
 
-.codetabs .codetabs-header .tab.active {
+.mdtabs .mdtabs-header .tab.active {
     border-bottom-color: #428bca;
     cursor: default;
     opacity: 1;
 }
 
-.codetabs .codetabs-body .tab {
+.mdtabs .mdtabs-body .tab {
     display: none;
 }
 
-.codetabs .codetabs-body .tab.active {
+.mdtabs .mdtabs-body .tab.active {
     display: block;
 }
-
