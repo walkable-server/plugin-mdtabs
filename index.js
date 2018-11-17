@@ -1,5 +1,3 @@
-var escape = require('escape-html');
-
 /*
     Generate HTML for the tab in the header
 
@@ -8,7 +6,7 @@ var escape = require('escape-html');
     @return {String}
 */
 function createTab(block, i, isActive) {
-    return '<div class="tab' + (isActive? ' active' : '') + '" data-codetab="' + i + '">' + block.kwargs.name + '</div>';
+    return '<div class="mdtab' + (isActive? ' active' : '') + '" data-mdtab="' + i + '">' + block.kwargs.title + '</div>';
 }
 
 /*
@@ -18,46 +16,48 @@ function createTab(block, i, isActive) {
     @param {Boolean}
     @return {String}
 */
-function createTabBody(block, i, isActive) {
-    return '<div class="tab' + (isActive? ' active' : '') + '" data-codetab="' + i + '"><pre><code class="lang-' + (block.kwargs.type || block.kwargs.name) + '">'
-        + escape(block.body) +
-    '</code></pre></div>';
+async function createTabBody(book, block, i, isActive) {
+    let body = await book.renderBlock('markdown', block.body);
+    return '<div class="mdtab' + (isActive? ' active' : '') + '" data-mdtab="' + i + '">'
+        + body
+        + '</div>';
 }
 
 module.exports = {
     book: {
         assets: './assets',
         css: [
-            'codetabs.css'
+            'mdtabs.css'
         ],
         js: [
-            'codetabs.js'
+            'mdtabs.js'
         ]
     },
 
     blocks: {
-        codetabs: {
-            blocks: ['language'],
-            process: function(parentBlock) {
+        mdtabs: {
+            blocks: ['mdtab'],
+            process: async function(parentBlock) {
                 var blocks = [parentBlock].concat(parentBlock.blocks);
                 var tabsContent = '';
                 var tabsHeader = '';
-
-                blocks.forEach(function(block, i) {
+                var i = 0;
+                for (const block of blocks) {
                     var isActive = (i == 0);
 
-                    if (!block.kwargs.name) {
-                        throw new Error('Code tab requires a "name" property');
+                    if (!block.kwargs.title) {
+                        throw new Error('Tab requires a "title" property');
                     }
 
                     tabsHeader += createTab(block, i, isActive);
-                    tabsContent += createTabBody(block, i, isActive);
-                });
+                    tabsContent += await createTabBody(this.book, block, i, isActive);
+                    i++;
+                };
 
 
-                return '<div class="codetabs">' +
-                    '<div class="codetabs-header">' + tabsHeader + '</div>' +
-                    '<div class="codetabs-body">' + tabsContent + '</div>' +
+                return '<div class="mdtabs">' +
+                    '<div class="mdtabs-header">' + tabsHeader + '</div>' +
+                    '<div class="mdtabs-body">' + tabsContent + '</div>' +
                 '</div>';
             }
         }
