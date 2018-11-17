@@ -33,6 +33,6 @@ console.log(msg);
 {%- mdtab title="HTML" %}
 \```html
 <b>Hello World</b>
-{% endmdtabs %}
 \```
+{% endmdtabs %}
 ```
