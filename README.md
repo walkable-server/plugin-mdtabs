@@ -25,12 +25,12 @@ This is a code block with tabs for each languages:
 msg = "Hello World"
 print msg
 ```
-{%- mdtab title="JavaScript" %}
+{% mdtab title="JavaScript" %}
 ```js
 var msg = "Hello World";
 console.log(msg);
 ```
-{%- mdtab title="HTML" %}
+{% mdtab title="HTML" %}
 ```html
 <b>Hello World</b>
 ```
