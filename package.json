@@ -1,14 +1,14 @@
 {
-  "name": "gitbook-plugin-codetabs",
+  "name": "gitbook-plugin-mdtabs",
   "version": "1.0.0",
-  "description": "Multiple languages code blocks for GitBook",
+  "description": "Markdown code blocks for GitBook",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GitbookIO/plugin-codetabs.git"
+    "url": "git+https://github.com/walkable-server/plugin-mdtabs.git"
   },
   "keywords": [
     "gitbook",
@@ -20,10 +20,9 @@
   "author": "Samy Pesse <samy@gitbook.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/GitbookIO/plugin-codetabs/issues"
+    "url": "https://github.com/walkable-server/plugin-mdtabs/issues"
   },
-  "homepage": "https://github.com/GitbookIO/plugin-codetabs#readme",
+  "homepage": "https://github.com/walkable-server/plugin-mdtabs#readme",
   "dependencies": {
-    "escape-html": "^1.0.3"
   }
 }
