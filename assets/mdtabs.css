@@ -2,18 +2,33 @@
 
 }
 
-.mdtabs .mdtabs-header .mdtab {
+.mdtabs-header .mdtab {
     display: inline-block;
-    padding: 3px 6px;
-    border-bottom: 2px solid transparent;
+    padding: 4px 12px;
+    border: solid #428bca;
+    border-width: 1px 1px 0px 0px;
     cursor: pointer;
     opacity: 0.7;
 }
-
-.mdtabs .mdtabs-header .mdtab.active {
-    border-bottom-color: #428bca;
+.mdtabs-header .mdtab:first-child {
+  border-left-width: 1px;
+}
+.mdtabs-header .mdtab.active {
     cursor: default;
     opacity: 1;
+}
+.mdtabs-header .mdtab {
+  background-color: aliceblue;
+  color: #428bca;
+  position: relative;
+  top: 1px;
+}
+.mdtabs-header .mdtab.active {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-bottom-color: white;
+
 }
 
 .mdtabs .mdtabs-body .mdtab {
@@ -22,4 +37,9 @@
 
 .mdtabs .mdtabs-body .mdtab.active {
     display: block;
+}
+
+.mdtabs-body {
+  border: 1px solid #428bca;
+  padding: 16px;
 }
