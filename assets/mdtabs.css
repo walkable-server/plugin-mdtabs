@@ -5,7 +5,7 @@
 .mdtabs-header .mdtab {
     display: inline-block;
     padding: 4px 12px;
-    border: solid #428bca;
+    border: solid rgba(0,0,0,.1);
     border-width: 1px 1px 0px 0px;
     cursor: pointer;
     opacity: 0.7;
@@ -40,6 +40,6 @@
 }
 
 .mdtabs-body {
-  border: 1px solid #428bca;
+  border: 1px solid rgba(0,0,0,.1);
   padding: 16px;
 }
